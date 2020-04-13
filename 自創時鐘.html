@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-position: center;
+            background-image: url(./images/big01.png);
+            background-repeat: no-repeat;
+            background-attachment: local;
+
+        }
+
+        #clock {
+            top: -45px;
+            width: 600px;
+            height: 600px;
+            background: rgba(28, 32, 34, 0.65);
+            border: 5px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            animation: box-shadow 3s infinite;
+        }
+
+        @keyframes box-shadow {
+            from {
+                box-shadow: 0px 0px 15px rgb(255, 255, 255);
+            }
+
+
+
+            50% {
+                box-shadow: 0px 0px 10px rgb(255, 255, 255);
+            }
+
+
+
+            to {
+                box-shadow: 0px 0px 15px rgb(255, 255, 255);
+            }
+        }
+
+        #hour {
+            background-image: url(./images/star.png);
+            background-size: cover;
+            position: absolute;
+            width: 200px;
+            height: 78px;
+            /* 記得加空白 */
+            top: 45%;
+            border-radius: 2px;
+            /* 往左30% + 寬度20% = 圓心位置50% */
+            left: 17%;
+            transform: rotate(0deg);
+            /* 以右邊為中心旋轉 */
+            transform-origin: right center;
+
+        }
+
+        #minute {
+            background-image: url(./images/star2.png);
+            background-size: cover;
+            position: absolute;
+            width: 40%;
+            height: 78px;
+            /* 記得加空白 */
+            top: calc(50% - 30px);
+            left: 10%;
+            transform: rotate(0deg);
+            /* 以右邊為中心旋轉 */
+            transform-origin: right center;
+            /* transform: translate(-50%, -50%); */
+        }
+
+        #second {
+            background-image: url(./images/star1.png);
+            background-size: cover;
+            position: absolute;
+            width: 46%;
+            height: 48px;
+            /* background: lightyellow; */
+            /* 記得加空白 */
+            top: calc(50% - 25px);
+            border-radius: 2px;
+            /* 往左30% + 寬度20% = 圓心位置50% */
+            left: 5%;
+            transform: rotate(0deg);
+            /* 以右邊為中心旋轉 */
+            transform-origin: right center;
+            /* transform: translate(-50%, -50%); */
+
+        }
+
+        #num12 {
+            position: absolute;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 4em;
+            color: white;
+            top: -44px;
+            left: 44%;
+        }
+
+        #num3 {
+            position: absolute;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 4em;
+            color: white;
+            top: 32%;
+            left: 88%;
+        }
+
+        #num6 {
+            position: absolute;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 4em;
+            color: white;
+            bottom: -44px;
+            right: 46%;
+        }
+
+        #num9 {
+            position: absolute;
+            font-family: 'Century Gothic', sans-serif;
+            font-size: 4em;
+            color: white;
+            bottom: 32%;
+            right: 88%;
+        }
+
+        #rila {
+            position: relative;
+            top: 200px;
+            right: -300px;
+            width: 200px;
+            height: 200px;
+            background-image: url(./images/01.png);
+            background-size: 200px;
+            background-repeat: no-repeat;
+            animation: rila 25s infinite 0s linear alternate backwards;
+        }
+
+        @keyframes rila {
+            from {
+                transform: rotate(0deg);
+                /* transform: rotate(0deg) translateY(0px) translateX(0px);
+                transform-origin: center center; */
+                top: 200px;
+                right: -300px;
+
+            }
+
+            50% {
+                transform: rotate(200deg);
+                /* transform: rotate(200deg) translateY(100px) translateX(-400px);
+                transform-origin: 0px 0px; */
+                top: 600px;
+                right: -1000px;
+            }
+
+
+            to {
+                transform: rotate(800deg);
+                /* transform: rotate(400deg) translateY(400px) translateX(-800px);
+                transform-origin: 0px 0px; */
+                top: 1000px;
+                right: -1500px;
+            }
+        }
+
+        #sis {
+            position: relative;
+            top: -150px;
+            left: 1400px;
+            width: 200px;
+            height: 200px;
+            background-image: url(./images/02.png);
+            background-size: 200px;
+            background-repeat: no-repeat;
+            animation: sis 35s infinite 0s linear alternate backwards;
+        }
+
+        @keyframes sis {
+            from {
+                transform: rotate(0deg);
+                /* transform: rotate(0deg) translateY(0px) translateX(0px);
+                transform-origin: center center; */
+                top: -200px;
+                right: 0px;
+
+            }
+
+            to {
+                transform: rotate(800deg);
+                /* transform: rotate(400deg) translateY(400px) translateX(-800px);
+                transform-origin: 0px 0px; */
+                top: -600px;
+                left: -600px;
+            }
+        }
+
+        #star3 {
+            position: relative;
+            top: 200px;
+            left: 1400px;
+            width: 200px;
+            height: 200px;
+            background-image: url(./images/star3.png);
+            background-size: 50px;
+            background-repeat: no-repeat;
+            float: left;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="rila"></div>
+    <div id="star3"></div>
+
+    <div id="clock">
+
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <p id=num12>12</p>
+        <p id=num3>3</p>
+        <p id=num6>6</p>
+        <p id=num9>9</p>
+    </div>
+
+    <div id="sis"></div>
+
+
+    <script>
+        const hour = document.getElementById("hour");
+        const minute = document.getElementById("minute");
+        const second = document.getElementById("second");
+
+        const setDate = () => {
+            const now = new Date();
+            hour.style.transform = `rotate(${now.getHours() * 30 + 90}deg)`;
+            minute.style.transform = `rotate(${now.getMinutes() * 6 + 90}deg)`;
+            second.style.transform = `rotate(${now.getSeconds() * 6 + 90}deg)`;
+        }
+
+        setDate();
+        setInterval(setDate, 1000);
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
